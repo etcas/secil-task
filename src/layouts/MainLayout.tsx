@@ -1,12 +1,14 @@
 import {Stack} from '@mui/material';
 import Header from '@/layouts/Header';
-import {ReactNode} from 'react';
+import {ReactNode, Suspense} from 'react';
 
 export default function MainLayout({children}: { children: ReactNode }) {
   return (
     <Stack direction={'column'} spacing={'10vh'}>
       <Header/>
-      {children}
+      <Suspense>
+        {children}
+      </Suspense>
     </Stack>
   );
 }
