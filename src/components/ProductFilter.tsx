@@ -33,8 +33,9 @@ export default function ProductFilter() {
   return (
     <Stack direction={'row'} sx={{p: 2, alignItems: 'center', backgroundColor: 'white', overflowX: 'scroll', zIndex: 0}} spacing={1}>
       {categories.map((category, i) => {
+        const camelcaseCategory = category.split(' ').map(word => `${word[0].toUpperCase()}${word.slice(1)}`).join(' ')
         return (
-          <Chip key={i} label={category} variant={category === selectedCategory ? 'filled' : 'outlined'} onClick={() => handleCategory(category)}/>
+          <Chip key={i} label={camelcaseCategory} variant={category === selectedCategory ? 'filled' : 'outlined'} onClick={() => handleCategory(category)}/>
         );
       })}
     </Stack>

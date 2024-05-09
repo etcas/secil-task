@@ -6,7 +6,7 @@ export default function ProductCard({product}: { product: IProduct }) {
   const router = useRouter();
 
   return (
-    <Box onClick={() => router.push(`${product.title}?id=${product.id}`)}
+    <Stack onClick={() => router.push(`${product.title}?id=${product.id}`)}
          sx={{
            width: {xs: '36%', md: '25%', lg: '14%'}, aspectRatio: .75, boxShadow: 1, borderRadius: 4, px: 2, py: 1, justifyContent: 'space-between', flexDirection: 'column', spacing: 2,
            '&:hover': {
@@ -23,6 +23,6 @@ export default function ProductCard({product}: { product: IProduct }) {
         </Typography>
         <Typography sx={{fontSize: '1.1rem', fontWeight: '500'}}>{product.price.toFixed(2)} ₺</Typography>
       </Stack>
-    </Box>
+    </Stack>
   );
 }
